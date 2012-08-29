@@ -34,9 +34,10 @@ public class ServerCommunicationActivity extends Activity {
 		DataOutputStream outToServer = null;
 		Socket s = null;
 		InputStream fromServer = null;
+		private static final String ipAddress = "bloo-blah";
 
 		try {
-			s = new Socket("209.2.236.195", 1234);
+			s = new Socket(ipAddress, 1234);
 			outToServer = new DataOutputStream(s.getOutputStream());
 			outToServer.writeBytes("Hello!\n");
 			fromServer = s.getInputStream();
